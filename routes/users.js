@@ -6,3 +6,8 @@ let Users = [
     {name: "Lisa", id: 10}
 ];
 
+router.get('/', (req, res) => {
+    res.json(Users);
+});
+
+module.exports = router;
