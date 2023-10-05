@@ -25,5 +25,13 @@ router.delete('/:id', (req, res) => {
     res.json(deletedUser);
 });
 
+router.post('/', (req, res) => {
+    const user = {
+        name: req.body.name,
+        id: req.body.id
+    };
+    Users.push(user);
+    res.json(user);
+});
 
 module.exports = router;
