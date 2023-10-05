@@ -21,3 +21,31 @@ test('GET jibberish', done => {
     .expect(404)
     .end(done)
 });
+
+test('GET /users', done => {
+    request(app)
+    .get('/users')
+    .expect(200)
+    .end(done)
+});
+
+test('GET /user/10', done => {
+    request(app)
+    .get('/user/10')
+    .expect(200)
+    .end(done)
+});
+
+test('DELETE /user/10', done => {
+    request(app)
+    .delete('/user/10')
+    .expect(200)
+    .end(done)
+});
+
+test('POST /user', done => {
+    request(app)
+    .post('/user')
+    .expect(200)
+    .end(done)
+});
