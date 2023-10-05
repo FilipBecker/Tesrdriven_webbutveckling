@@ -17,5 +17,13 @@ router.get('/:id', (req, res) => {
     res.json(user);
 });
 
+router.delete('/:id', (req, res) => {
+    const userIndex = Users.findIndex(u => u.id === parseInt(req.params.id));
+    if (userIndex === -1) return res.status(404).send('User not found.');
+
+    const deletedUser = Users.splice(userIndex, 1);
+    res.json(deletedUser);
+});
+
 
 module.exports = router;
